@@ -11,8 +11,10 @@ use yii\base\Security;
 /**
  * LoginForm is the model behind the login form.
  *
- * @property-read User|null $user
+ * @property-read User|null $user;
  *
+ */
+
 class LoginForm extends Model
 {
     public string $username = '';
@@ -28,6 +30,7 @@ class LoginForm extends Model
     /**
      * @return array the validation rules.
      */
+
     public function rules(): array
     {
         return [
@@ -86,3 +89,4 @@ class LoginForm extends Model
         return $this->_user;
     }
 }
+
