@@ -32,7 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'nama',
             'stock',
-            'harga',
+            [
+                'attribute' => 'harga',
+                'value' => 'Rp ' . number_format($model->harga, 0, ',', '.'),
+            ],
         ],
     ]) ?>
 
