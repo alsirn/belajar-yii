@@ -32,12 +32,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'nama',
             'stock',
-            'harga',
+            
+            // Ubah kolom harga menjadi seperti ini:
+            [
+                'attribute' => 'harga',
+                'value' => function ($model) {
+                    return 'Rp ' . number_format($model->harga, 0, ',', '.');
+                },
+            ],
+
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Barang $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

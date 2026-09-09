@@ -30,8 +30,14 @@ class Barang extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'nama', 'stock', 'harga'], 'required'],
-            [['id', 'stock', 'harga'], 'integer'],
+            [['nama', 'stock', 'harga'], 'required', 'message' => '{attribute} wajib diisi.'],
+            
+            // Validasi integer & minimal 0 untuk stock
+            ['stock', 'integer', 'min' => 0, 'tooSmall' => 'Stok tidak boleh minus/negatif.'],
+            
+            // Validasi integer & minimal 100 untuk harga
+            ['harga', 'integer', 'min' => 100, 'tooSmall' => 'Harga minimal harus Rp 100.'],
+            
             [['nama'], 'string', 'max' => 200],
         ];
     }
