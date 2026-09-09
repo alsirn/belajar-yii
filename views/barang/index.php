@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\BarangSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Barangs';
+$this->title = 'Barang';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="barang-index">
